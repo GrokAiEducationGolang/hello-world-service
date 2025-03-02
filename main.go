@@ -1,12 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"log"
 	"net/http"
 )
 
 func HelloWorldHandler(w http.ResponseWriter, req *http.Request) {
-	w.Write([]byte("Hello world!\n"))
+	fmt.Fprintf(w, "Hello world!\n")
 }
 
 func main() {

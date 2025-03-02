@@ -19,5 +19,6 @@ func TestHelloWordlHandler(t *testing.T) {
 	resp := w.Result()
 	body, err := io.ReadAll(resp.Body)
 	require.NoError(t, err)
+	assert.Equal(t, resp.StatusCode, http.StatusOK)
 	assert.Equal(t, string(body), "Hello world!\n")
 }
